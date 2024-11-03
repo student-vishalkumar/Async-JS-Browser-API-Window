@@ -1,0 +1,26 @@
+
+Promises and callbacks are both mechanisms in JavaScript used to handle asynchronous operations, but they have significant differences in their design and usability. Here’s a comparison between the two, highlighting why Promises are generally preferred for managing asynchronous code.
+
+CALLBACKS-
+         A callback is a function passed as an argument to another function, which is then invoked at a later time, typically when an asynchronous operation complete
+
+Drawbacks of callback-
+        Callback Hell: When multiple asynchronous operations depend on each other, you end up nesting callbacks, leading to deeply nested and hard-to-read code. This is often referred to as "callback hell."
+
+        Error Handling: Managing errors in callbacks can be cumbersome. You typically need to check for errors at each level, making the code harder to follow.
+
+        Inversion of Control: Callbacks can lead to situations where the caller has less control over the asynchronous flow, making debugging more difficult.
+
+PROMISES-
+        A Promise is an object representing the eventual completion or failure of an asynchronous operation. It can be in one of three states: pending, fulfilled, or rejected.
+
+Why Promises are preferred-
+        Chaining: Promises can be chained using .then() and .catch(), allowing for a cleaner and more readable structure. This helps avoid callback hell.
+
+        Better Error Handling: Promises provide a centralized way to handle errors. A single .catch() at the end of a chain can catch errors from any part of the chain, simplifying error management.
+
+        More Control: Promises allow for more control over asynchronous flows, as they can be easily combined using Promise.all, Promise.race, and other methods for managing multiple asynchronous operations.
+
+        Improved Readability: The structure of Promises promotes a linear and more intuitive flow, making it easier to read and understand the code.
+
+        Async/Await: With the introduction of async/await syntax in ES2017, working with Promises becomes even more straightforward. It allows you to write asynchronous code that looks and behaves like synchronous code, further enhancing readability.

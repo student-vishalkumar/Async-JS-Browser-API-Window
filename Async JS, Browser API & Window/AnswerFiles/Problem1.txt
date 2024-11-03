@@ -1,0 +1,30 @@
+XMLHttpRequest-
+
+The XMLHttpRequest object is a built-in JavaScript object that allows web applications to make asynchronous HTTP requests to servers without having to refresh the page. It plays a crucial role in AJAX (Asynchronous JavaScript and XML), enabling the dynamic updating of web content.
+
+Key Features of XMLHttpRequest:
+Asynchronous Requests: It allows web applications to send and receive data from a server in the background, enabling a smoother user experience.
+
+Support for Various Data Formats: While originally designed for XML, XMLHttpRequest can handle various data formats, including JSON, plain text, and HTML.
+
+Event Handling: The object can trigger events to indicate the state of the request, allowing developers to execute code when the request is completed or fails.
+
+
+How is it used-
+
+   var xhr = new XMLHttpRequest(); //create an instance
+
+   xhr.open('GET', 'https://api.example.com/data', true); // configure the request
+
+   xhr.onreadystatechange = function() { // setup event hnadlers
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                var response = JSON.parse(xhr.responseText);
+                console.log(response);
+            } else {
+                console.error('Error: ' + xhr.status);
+            }
+        }
+    };
+
+    xhr.send(); //send the request

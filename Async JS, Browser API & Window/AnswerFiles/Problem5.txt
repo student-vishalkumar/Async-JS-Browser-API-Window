@@ -1,0 +1,98 @@
+JavaScript developers have access to various Browser APIs that enable interaction with the browser and the web page, allowing for a wide range of functionalities. Here are some common Browser APIs:
+
+1. DOM (Document Object Model) API-
+           Description: Provides a structured representation of the HTML or XML document, allowing developers to manipulate the document’s content, structure, and style.
+
+           Use Cases: Creating, updating, or deleting HTML elements, handling events, and modifying styles.
+
+2. Fetch API-
+         Description: A modern interface for making network requests, providing a more powerful and flexible way to perform HTTP requests compared to XMLHttpRequest.
+
+         Use Cases: Fetching resources from a server, handling JSON data, and making both GET and POST requests.
+
+         Example-
+                   fetch('https://api.example.com/data')
+                        .then(response => response.json())
+                        .then(data => console.log(data));
+
+
+3. Web Storage API-
+         Description: Provides a way to store data locally in the browser. It includes two mechanisms: localStorage for persistent storage and sessionStorage for storage that lasts for the duration of the page session.
+
+        Use Cases: Storing user preferences, caching data, and maintaining application state.
+
+        Example- 
+                  localStorage.setItem('key', 'value');
+                  const value = localStorage.getItem('key');
+
+
+4. Canvas API-
+         Description: Allows for drawing graphics and animations on a web page using a <canvas> element. Developers can create shapes, images, and text dynamically.
+
+         Use Cases: Creating games, charts, and visualizations. 
+
+         Example-
+                   const canvas = document.getElementById('myCanvas');
+                   const ctx = canvas.getContext('2d');
+                   ctx.fillStyle = 'blue';
+                   ctx.fillRect(10, 10, 100, 100);
+
+
+5. Geolocation API-
+         Description: Provides access to the geographical location of the device. It allows web applications to retrieve the user's location information.
+
+         Use Cases: Location-based services, mapping applications, and personalized content.
+
+         Example-
+                   navigator.geolocation.getCurrentPosition(position => {
+                    console.log(position.coords.latitude, position.coords.longitude);
+                   });
+
+
+6. WebSockets API
+         Description: Enables real-time communication between the client and the server over a persistent connection, allowing for bidirectional data transfer.
+
+         Use Cases: Chat applications, live notifications, and real-time updates.
+
+         Example-
+                   const socket = new WebSocket('ws://example.com/socket');
+                   socket.onmessage = event => console.log(event.data);
+
+
+7. Service Workers API
+         Description: Allows for running scripts in the background, separate from a web page, enabling features like caching resources and background synchronization.
+
+         Use Cases: Progressive Web Apps (PWAs), offline capabilities, and push notifications.
+
+         Example- 
+                   if ('serviceWorker' in navigator) {
+                         navigator.serviceWorker.register('/service-worker.js');
+                    }
+
+
+8. Notification API
+         Description: Allows web applications to send notifications to users, even when the application is not active, provided the user grants permission.
+
+         Use Cases: Alerts, reminders, and updates.
+
+         Example-
+                  Notification.requestPermission().then(permission => {
+                     if (permission === 'granted') {
+                            new Notification('Hello, world!');
+                        }
+                    });
+
+
+9. Web Audio API
+         Description: Provides a powerful system for controlling audio on the web, enabling developers to create complex audio applications with features like spatial audio and real-time effects.
+
+         Use Cases: Music players, audio games, and audio visualization.
+
+         Example-
+                  const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                  const oscillator = audioContext.createOscillator();
+                  oscillator.type = 'sine';
+                  oscillator.frequency.setValueAtTime(440, audioContext.currentTime); // A note
+                  oscillator.start();
+
+
